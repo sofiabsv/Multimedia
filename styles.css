@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(149, 207, 255);
@@ -40,23 +40,17 @@ button:hover {
   background-color: rgb(2, 81, 146);
 }
 
-h1{ 
+h1 {
   font-size: 55px;
   text-align: center;
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #ffffff;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0px #4e6db1,
-               1px 2px 0px #4e6db1,
-               1px 3px 0px #4e6db1,
-               1px 4px 0px #4e6db1,
-               1px 5px 0px #4e6db1,
-               1px 6px 0px #4e6db1,
-               1px 10px 5px rgba(16, 16, 16, 0.5),
-               1px 15px 10px rgba(16, 16, 16, 0.4),
-               1px 20px 30px rgba(16, 16, 16, 0.3),
-               1px 25px 50px rgba(16, 16, 16, 0.2);
+  text-shadow: 1px 1px 0px #4e6db1, 1px 2px 0px #4e6db1, 1px 3px 0px #4e6db1,
+    1px 4px 0px #4e6db1, 1px 5px 0px #4e6db1, 1px 6px 0px #4e6db1,
+    1px 10px 5px rgba(16, 16, 16, 0.5), 1px 15px 10px rgba(16, 16, 16, 0.4),
+    1px 20px 30px rgba(16, 16, 16, 0.3), 1px 25px 50px rgba(16, 16, 16, 0.2);
 }
 
 @media (max-width: 600px) {
@@ -77,7 +71,7 @@ h1{
   letter-spacing: 2px;
 }
 
-.footer p{
+.footer p {
   margin: 10px 15px;
 }
 
@@ -88,21 +82,22 @@ label {
   letter-spacing: 2px;
 }
 
-#result{
+#result {
   font-size: 30px;
   display: none;
   background-color: rgb(255, 255, 255);
   padding: 20px;
   margin: 30px;
   border-radius: 20px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-a{
+a {
   color: rgb(2, 117, 211);
 }
 
-h3{
+h3 {
   font-size: 25px;
   letter-spacing: 2px;
   color: rgb(2, 81, 146);
