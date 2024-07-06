@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mediensucht Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="body">
+      <h1>Quiz:<br />Liegt bei Ihnen eine Mediensucht vor?</h1>
+      <form id="quizForm">
+        <div id="questions">
+            <h3>Haben Sie in den letzten 12 Monaten...</h3>
+        </div>
+        <button type="button" onclick="calculateResult()">Auswerten</button>
+      </form>
+      <div id="result"></div>
+
+      <script>
+        const questions = [
+          "<strong>Frage 1:</strong><br>...schon mal stundenlang an nichts anderes denken können als an den Moment, an dem Sie wieder Games und/oder Social Media nutzen können?",
+          "<strong>Frage 2:</strong><br>...sich unzufrieden gefühlt, weil Sie mehr spielen und/ oder mehr Social Media nutzen wollten?",
+          "<strong>Frage 3:</strong><br>...sich unglücklich gefühlt, wenn Sie nicht spielen und/ oder Social Media nutzen konnten?",
+          "<strong>Frage 4:</strong><br>...das Spielen und/oder die Nutzung von Social Media nicht verringern können, während andere Ihnen sagten, dass Sie das tun müssen?",
+          "<strong>Frage 5:</strong><br>...Spiele gespielt und/ oder Social Media genutzt, um nicht an unangenehme Dinge denken zu müssen?",
+          "<strong>Frage 6:</strong><br>...Streit mit anderen gehabt durch Ihr Spielverhalten und/oder Ihre Social-Media-Nutzung?",
+          "<strong>Frage 7:</strong><br>...die Zeit, die Sie Spielen und/oder Social Media gewidmet haben, vor anderen geheim gehalten?",
+          "<strong>Frage 8:</strong><br>...kein Interesse an Hobbys oder anderen Aktivitäten gezeigt, weil Sie spielen/ online aktiv sein wollten?",
+          "<strong>Frage 9:</strong><br>...ernsthafte Probleme mit der Familie, Freunden oder dem Partner durch das Spielen oder die Nutzung von Social Media gehabt?",
+        ];
+
+        function generateQuestions() {
+          const questionsContainer = document.getElementById("questions");
+          questions.forEach((question, index) => {
+            const questionElement = document.createElement("div");
+            questionElement.innerHTML = `
+                    <p>${question}</p>
+                    <label><input type="radio" name="question${index}" value="yes"> Ja</label>
+                    <label><input type="radio" name="question${index}" value="no"> Nein</label>
+                `;
+            questionsContainer.appendChild(questionElement);
+          });
+        }
+
+        function calculateResult() {
+          let yesCount = 0;
+          for (let i = 0; i < questions.length; i++) {
+            const yes =
+              document.querySelector(`input[name="question${i}"]:checked`)
+                ?.value === "yes";
+            if (yes) yesCount++;
+          }
+
+          let resultText = "";
+          if (yesCount >= 5) {
+            resultText = "Bei Ihnen könnte eine Mediensucht vorliegen.";
+          } else if (yesCount === 3 || yesCount === 4) {
+            resultText =
+              "Bei Ihnen könnte eine problematische Mediennutzung vorliegen.";
+          } else {
+            resultText = "Sie weisen keine Mediensucht auf.";
+          }
+
+          document.getElementById("result").innerText = resultText;
+          const resultElement = document.getElementById("result");
+          resultElement.innerText = resultText;
+          resultElement.style.display = "block";
+        }
+
+        window.onload = generateQuestions;
+      </script>
+      <div class="footer">
+        <p>Made by Franca Lenz & Sofia Berdichevska</p>
+        <p>
+          Klicke
+          <a
+            href="https://caas.content.dak.de/caas/v1/media/11454/data/09ed81447161931b9c1479043e071cc5/broschuere-internetsucht-angehoerige.pdf"
+            >hier</a
+          >
+          um zur Quizquelle zu kommen
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
